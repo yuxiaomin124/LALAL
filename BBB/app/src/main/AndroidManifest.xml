@@ -15,6 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".declare.DeclareActivity"/>
+        <activity android:name=".declare.LoginActivity"/>
+        <activity android:name=".declare.RegisterActivity"/>
+        <activity android:name=".declare.RegisterUserActivity"/>
+        <activity android:name=".declare.RegisterUserNextActivity"/>
+        <activity android:name=".my.shopping_car.ShoppingCarActivity"/>
+        <activity android:name=".my.wallet.WalletActivity"/>
     </application>
 
 </manifest>

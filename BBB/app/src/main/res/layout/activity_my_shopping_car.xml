@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grayBackGround">
+
+    <RelativeLayout
+        android:id="@+id/reLayout_my_shopping_car_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/iv_my_shopping_car_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/fan3x"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="购物车"
+            android:textColor="@android:color/black"/>
+
+        <CheckBox
+            android:id="@+id/ck_shopping_car_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+           android:text="编辑"
+            android:button="@null"
+
+            android:textColor="@android:color/black"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_my_shopping_car"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/reLayout_my_shopping_car_top">
+
+
+    </FrameLayout>
+</RelativeLayout>
