@@ -2,10 +2,15 @@ package com.example.administrator.bbb.order.all;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 
 import com.example.administrator.bbb.R;
 import com.example.administrator.bbb.base.BaseFragment;
+import com.example.administrator.bbb.tools.RVOnItemClickListener;
+import com.example.administrator.bbb.tools.URLValues;
+import com.example.administrator.bbb.tools.okh.NetTool;
+import com.example.administrator.bbb.tools.okh.OnHttpCallBack;
 
 import java.util.ArrayList;
 
@@ -15,7 +20,6 @@ import java.util.ArrayList;
 public class AllFragment extends BaseFragment {
     private RecyclerView mRecyclerView;
     private AllAdapter mAllAdapter;
-    private ArrayList<AllBean> mBeanArrayList;
 
     @Override
     protected int initLayout() {
@@ -30,16 +34,27 @@ public class AllFragment extends BaseFragment {
     @Override
     protected void initData() {
         mAllAdapter = new AllAdapter(getActivity());
-        mBeanArrayList = new ArrayList<>();
-
-        AllBean bean = new AllBean();
-        for (int i = 0; i < 10; i++) {
-            bean.setTitle("lallala");
-            mBeanArrayList.add(bean);
-        }
-
-        mAllAdapter.setAllBeen(mBeanArrayList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(mAllAdapter);
+
+        NetTool.getInstance().startRequest(URLValues.URL_ALL_ORDER, AllBean.class, new OnHttpCallBack<AllBean>() {
+            @Override
+            public void onSuccess(AllBean response) {
+                mAllAdapter.setAllBeen(response);
+                mRecyclerView.setAdapter(mAllAdapter);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
+
+        mAllAdapter.setMyOnClickListener(new RVOnItemClickListener() {
+            @Override
+            public void onClick(int position) {
+                Toast.makeText(getActivity(), "houhou", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

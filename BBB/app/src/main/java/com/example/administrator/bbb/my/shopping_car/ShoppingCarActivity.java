@@ -33,8 +33,8 @@ public class ShoppingCarActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void initData() {
-        ckEdit.setOnClickListener(this);
         replaceFragment(R.id.frame_my_shopping_car, new ShoppingCarDefultFragment());
+        ckEdit.setOnClickListener(this);
         ivBack.setOnClickListener(this);
     }
 
@@ -43,11 +43,12 @@ public class ShoppingCarActivity extends BaseActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.ck_shopping_car_edit:
                 if (ckEdit.isChecked()) {
-                    replaceFragment(R.id.frame_my_shopping_car, new ShoppingCarDefultFragment());
-                    ckEdit.setText("编辑");
-                } else {
                     replaceFragment(R.id.frame_my_shopping_car, new ShoppingCarAfterFragment());
                     ckEdit.setText("完成");
+                } else {
+                    replaceFragment(R.id.frame_my_shopping_car, new ShoppingCarDefultFragment());
+                    ckEdit.setText("编辑");
+
                 }
                 break;
             case R.id.iv_my_shopping_car_back:

@@ -7,10 +7,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_shopping">
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_shopping_grag_line">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,38 +23,35 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="2"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:src="@mipmap/ic_launcher"/>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_my_shopping_car_default_item_color"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_weight="2"
-                    android:maxLines="2"
                     android:text="color"/>
 
                 <TextView
                     android:id="@+id/tv_my_shopping_car_default_item_size"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="2"
                     android:text="size"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="15dp"
-                    android:layout_weight="4"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -72,21 +67,21 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="15dp"
+                            android:layout_width="25dp"
                             android:layout_height="0.5dp"
-                            android:background="@color/grayBackGround"/>
+                            android:background="#e1e1e1"/>
 
                         <TextView
                             android:id="@+id/tv_my_shopping_car_default_item_num"
                             android:layout_width="25dp"
-                            android:layout_height="25dp"
+                            android:layout_height="24dp"
                             android:gravity="center"
                             android:text="1"/>
 
                         <ImageView
-                            android:layout_width="15dp"
+                            android:layout_width="25dp"
                             android:layout_height="0.5dp"
-                            android:background="@color/grayBackGround"/>
+                            android:background="#e1e1e1"/>
                     </LinearLayout>
 
                     <ImageView
@@ -99,8 +94,7 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:orientation="vertical">
 
@@ -110,39 +104,40 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="179"
+                    android:layout_marginTop="10dp"
                     android:textColor="@color/red"/>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal">
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/grayBackGround"/>
 
                     <TextView
                         android:id="@+id/tv_my_shopping_car_default_item_price_old"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
                         android:text="379"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_alignLeft="@id/tv_my_shopping_car_default_item_price_old"
+                        android:layout_alignRight="@id/tv_my_shopping_car_default_item_price_old"
+                        android:layout_marginTop="10dp"
+                        android:background="#b6b5b5"/>
                 </RelativeLayout>
 
                 <Button
                     android:id="@+id/btn_my_shopping_car_default_item_totalpay"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/shape_login_button"
-                    android:text="结算"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
+                    android:text="结 算"
                     android:textColor="@android:color/white"/>
-
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

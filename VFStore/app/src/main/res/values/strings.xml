@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">VFStore</string>
+    <string name="xinhuiyuanzhuanxiang">新会员专享 ·</string>
+    <string name="xianshitehui">限时特惠</string>
+    <string name="meizhuanggehu">美妆个饰</string>
+    <string name="jiajuriyon">家具日用</string>
+    <string name="fushixiemao">服饰鞋帽</string>
+    <string name="zhongbaoshoushi">钟表首饰</string>
+    <string name="muyingwanju">母婴玩具</string>
+    <string name="dianshiyingyin">电视影音</string>
+    <string name="tongxunchanpin">通讯产品</string>
+    <string name="shoujishuma">手机数码</string>
+    <string name="diannaobangong">电脑办公</string>
+    <string name="qicheyonpin">汽车用品</string>
+    <string name="shipinjiushui">食品酒水</string>
+    <string name="xiangbaoshepin">箱包奢品</string>
+    <string name="jiangkangyiliao">健康医疗</string>
+    <string name="wenhuayishu">文化艺术</string>
+    <string name="jiazhuangjiancai">家装建材</string>
+    <string name="collect">收藏</string>
+    <string name="editor">编辑</string>
+    <string name="fenlei">分类</string>
+    <string name="zaixianpinpai">在售品牌</string>
+</resources>

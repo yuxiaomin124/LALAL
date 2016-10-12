@@ -1,59 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="#e1e1e1"/>
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:id="@+id/reLayout_order_all"
+                android:descendantFocusability="blocksDescendants">
 
     <ImageView
-        android:id="@+id/iv_order_all_item_icon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginLeft="10dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/grayBackGround"/>
 
     <TextView
         android:id="@+id/tv_order_all_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/iv_order_all_item_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:text="title"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textSize="13sp"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_alignTop="@id/tv_order_all_item_title"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
         android:layout_toRightOf="@id/tv_order_all_item_title"
         android:src="@mipmap/baixuan3x"/>
 
     <TextView
-        android:id="@+id/tv_order_all_item_unpay"
+        android:id="@+id/tv_order_all_item_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:padding="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:text="unpay"
-        android:textColor="@color/yellowTheme"/>
+        android:textColor="@color/yellowTheme"
+        android:textSize="13sp"/>
 
     <RelativeLayout
         android:id="@+id/reLayout_order_all_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_order_all_item_title"
-        android:background="#e1e1e1"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:background="@color/grayBackGround">
 
         <ImageView
-            android:id="@+id/iv_order_all_item_head"
+            android:id="@+id/iv_order_all_item_goodshead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -68,9 +65,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/iv_order_all_item_head"
+            android:layout_toRightOf="@id/iv_order_all_item_goodshead"
             android:text="name"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:textSize="13sp"/>
 
         <RelativeLayout
             android:id="@+id/llayout_order_all_item"
@@ -80,10 +78,19 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/tv_order_all_item_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=" ¥ "/>
+
+            <TextView
                 android:id="@+id/tv_order_all_item_price_current"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="price"/>
+                android:layout_toRightOf="@id/tv_order_all_item_log"
+                android:text="price"
+                android:textSize="13sp"/>
 
             <TextView
                 android:id="@+id/tv_order_all_item_price_old"
@@ -91,7 +98,26 @@
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@id/tv_order_all_item_price_current"
                 android:layout_below="@id/tv_order_all_item_price_current"
-                android:text="old"/>
+                android:text="old"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tv_order_all_item_logg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_order_all_item_price_current"
+                android:layout_toLeftOf="@id/tv_order_all_item_price_old"
+                android:text=" ¥ "/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@id/tv_order_all_item_logg"
+                android:layout_alignRight="@id/tv_order_all_item_price_current"
+                android:layout_below="@id/tv_order_all_item_price_current"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray"/>
+
 
             <TextView
                 android:id="@+id/tv_order_all_item_count"
@@ -100,7 +126,8 @@
                 android:layout_alignRight="@id/tv_order_all_item_price_current"
                 android:layout_below="@id/tv_order_all_item_price_old"
                 android:text="1"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black"
+                android:textSize="13sp"/>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -110,62 +137,81 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/reLayout_order_all_item"
-        android:layout_margin="14dp">
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="14dp">
 
         <TextView
             android:id="@+id/tv_order_all_item_count_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="共1件商品，合计："
+            android:text="合计："
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_order_all_item_log_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_order_all_item_count_all"
+            android:text=" ¥ "
+            android:textColor="@android:color/black"/>
+
 
         <TextView
             android:id="@+id/tv_order_all_item_price_totle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv_order_all_item_count_all"
+            android:layout_toRightOf="@id/tv_order_all_item_log_total"
             android:text="3.4"
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
 
         <TextView
             android:id="@+id/tv_order_all_item_price_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tv_order_all_item_price_totle"
-            android:text="(含运费:"
+            android:text=" (含运费:"
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_order_all_item_log_yun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_order_all_item_price_tv"
+            android:text=" ¥ "
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:id="@+id/tv_order_all_item_price_extra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tv_order_all_item_price_tv"
+            android:layout_toRightOf="@id/tv_order_all_item_log_yun"
             android:text="0.00)"
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
     </RelativeLayout>
-
 
     <Button
         android:id="@+id/btn_order_all_item_delete_order"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/reLayout_order_all_item_totle"
         android:layout_marginRight="10dp"
+        android:background="@drawable/shape_shopping_grag_line"
         android:text="删除订单"/>
 
     <Button
         android:id="@+id/btn_order_all_item_evaluation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/reLayout_order_all_item_totle"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@id/btn_order_all_item_delete_order"
+        android:background="@drawable/shape_shopping_grag_line"
         android:text="追加评论"/>
-
 </RelativeLayout>

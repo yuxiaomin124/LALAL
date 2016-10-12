@@ -1,54 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:descendantFocusability="blocksDescendants">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:background="#e1e1e1"/>
-
-    <ImageView
-        android:id="@+id/iv_order_receipt_goods_item_icon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_margin="10dp"
-        android:src="@mipmap/ic_launcher"/>
+        android:background="@color/grayBackGround"/>
 
     <TextView
         android:id="@+id/tv_order_receipt_goods_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/iv_order_receipt_goods_item_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:text="title"
-        android:textColor="@android:color/black"/>
+        android:textColor="@android:color/black"
+        android:textSize="13sp"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/tv_order_receipt_goods_item_title"
         android:src="@mipmap/baixuan3x"/>
 
     <TextView
-        android:id="@+id/tv_order_receipt_goods_item_unpay"
+        android:id="@+id/tv_order_receipt_goods_item_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:padding="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:text="unpay"
-        android:textColor="@color/yellowTheme"/>
+        android:textColor="@color/yellowTheme"
+        android:textSize="13sp"/>
 
     <RelativeLayout
         android:id="@+id/reLayout_order_receipt_goods_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_order_receipt_goods_item_title"
-        android:background="#e1e1e1">
+        android:background="@color/grayBackGround">
 
         <ImageView
             android:id="@+id/iv_order_receipt_goods_item_head"
@@ -68,7 +66,8 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/iv_order_receipt_goods_item_head"
             android:text="name"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:textSize="13sp"/>
 
         <RelativeLayout
             android:id="@+id/llayout_order_receipt_goods_item"
@@ -78,10 +77,18 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/tv_order_receipt_goods_item_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ¥ "/>
+
+            <TextView
                 android:id="@+id/tv_order_receipt_goods_item_price_current"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="price"/>
+                android:layout_toRightOf="@id/tv_order_receipt_goods_item_log"
+                android:text="price"
+                android:textSize="13sp"/>
 
             <TextView
                 android:id="@+id/tv_order_receipt_goods_item_price_old"
@@ -89,7 +96,24 @@
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@id/tv_order_receipt_goods_item_price_current"
                 android:layout_below="@id/tv_order_receipt_goods_item_price_current"
-                android:text="old"/>
+                android:text="old"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tv_order_receipt_goods_item_logg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tv_order_receipt_goods_item_price_old"
+                android:text=" ¥ "/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@id/tv_order_receipt_goods_item_logg"
+                android:layout_alignRight="@id/tv_order_receipt_goods_item_price_current"
+                android:layout_below="@id/tv_order_receipt_goods_item_log"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/darker_gray"/>
 
             <TextView
                 android:id="@+id/tv_order_receipt_goods_item_count"
@@ -116,7 +140,7 @@
             android:layout_height="wrap_content"
             android:text="共1件商品，合计："
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
 
         <TextView
             android:id="@+id/tv_order_receipt_goods_item_price_totle"
@@ -125,7 +149,7 @@
             android:layout_toRightOf="@id/tv_order_receipt_goods_item_count_all"
             android:text="3.4"
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
 
         <TextView
             android:id="@+id/tv_order_receipt_goods_item_price_tv"
@@ -134,7 +158,7 @@
             android:layout_toRightOf="@id/tv_order_receipt_goods_item_price_totle"
             android:text="(含运费:"
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
 
         <TextView
             android:id="@+id/tv_order_receipt_goods_item_price_extra"
@@ -143,33 +167,36 @@
             android:layout_toRightOf="@id/tv_order_receipt_goods_item_price_tv"
             android:text="0.00)"
             android:textColor="@android:color/black"
-            android:textSize="12sp"/>
+            android:textSize="13sp"/>
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_order_receipt_goods_item_delay_goods"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/reLayout_order_receipt_goods_item_totle"
         android:layout_marginRight="10dp"
+        android:background="@drawable/shape_shopping_grag_line"
         android:text="延长收货"/>
 
     <Button
         android:id="@+id/btn_order_receipt_goods_item_see"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/reLayout_order_receipt_goods_item_totle"
         android:layout_marginBottom="10dp"
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@id/btn_order_receipt_goods_item_delay_goods"
+        android:background="@drawable/shape_shopping_grag_line"
         android:text="查看物流"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/reLayout_order_receipt_goods_item_totle"
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@id/btn_order_receipt_goods_item_see"
+        android:background="@drawable/shape_shopping_grag_line"
         android:text="确认收货"/>
 </RelativeLayout>

@@ -5,6 +5,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.administrator.bbb.R;
 import com.example.administrator.bbb.base.BaseFragment;
+import com.example.administrator.bbb.tools.URLValues;
+import com.example.administrator.bbb.tools.okh.NetTool;
+import com.example.administrator.bbb.tools.okh.OnHttpCallBack;
 
 import java.util.ArrayList;
 
@@ -13,7 +16,6 @@ import java.util.ArrayList;
  */
 public class ReceiptGoodsFragment extends BaseFragment {
     private ReceiptGoodsAdapter mReceiptGoodsAdapter;
-    private ArrayList<ReceiptGoodsBean> mBeen;
     private RecyclerView mRecyclerView;
 
     @Override
@@ -29,17 +31,22 @@ public class ReceiptGoodsFragment extends BaseFragment {
     @Override
     protected void initData() {
         mReceiptGoodsAdapter = new ReceiptGoodsAdapter(getActivity());
-        mBeen = new ArrayList<>();
-
-        ReceiptGoodsBean bean = new ReceiptGoodsBean();
-        for (int i = 0; i < 10; i++) {
-            bean.setTitle("lallala");
-            mBeen.add(bean);
-        }
-
-        mReceiptGoodsAdapter.setBeanArrayList(mBeen);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(mReceiptGoodsAdapter);
+
+        NetTool.getInstance().startRequest(URLValues.URL_RECEIPT_GOODS, ReceiptGoodsBean.class, new OnHttpCallBack<ReceiptGoodsBean>() {
+            @Override
+            public void onSuccess(ReceiptGoodsBean response) {
+                mReceiptGoodsAdapter.setReceiptGoodsBean(response);
+                mRecyclerView.setAdapter(mReceiptGoodsAdapter);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
+
+
     }
 }
 

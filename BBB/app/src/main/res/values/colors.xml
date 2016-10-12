@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="yellowTheme">#faf4810d</color>
-    <color name="grayBackGround">#e1e1e1</color>
+    <color name="grayBackGround">#ece9e9</color>
     <color name="red">#f12828</color>
 </resources>

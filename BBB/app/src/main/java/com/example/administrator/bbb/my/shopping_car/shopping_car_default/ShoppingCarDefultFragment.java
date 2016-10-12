@@ -6,6 +6,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.administrator.bbb.R;
 import com.example.administrator.bbb.base.BaseFragment;
+import com.example.administrator.bbb.tools.URLValues;
+import com.example.administrator.bbb.tools.okh.NetTool;
+import com.example.administrator.bbb.tools.okh.OnHttpCallBack;
 
 import java.util.ArrayList;
 
@@ -15,7 +18,6 @@ import java.util.ArrayList;
 public class ShoppingCarDefultFragment extends BaseFragment {
 
     private ShoppingCarDefultAdapter mDefultAdapter;
-    private ArrayList<ShoppingCarDefultBean> mDefultBeen;
     private RecyclerView mRecyclerView;
 
     @Override
@@ -32,16 +34,19 @@ public class ShoppingCarDefultFragment extends BaseFragment {
     @Override
     protected void initData() {
         mDefultAdapter = new ShoppingCarDefultAdapter(getActivity());
-        mDefultBeen = new ArrayList<>();
-
-        ShoppingCarDefultBean bean = new ShoppingCarDefultBean();
-        for (int i = 0; i < 10; i++) {
-            bean.setColor("lallala");
-            mDefultBeen.add(bean);
-        }
-
-        mDefultAdapter.setAllBeen(mDefultBeen);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(mDefultAdapter);
+        NetTool.getInstance().startRequest(URLValues.URL_MY_SHOPPING_CAR_DEFAULT, ShoppingCarDefultBean.class, new OnHttpCallBack<ShoppingCarDefultBean>() {
+            @Override
+            public void onSuccess(ShoppingCarDefultBean response) {
+                mDefultAdapter.setDefultBean(response);
+                mRecyclerView.setAdapter(mDefultAdapter);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
+
     }
 }

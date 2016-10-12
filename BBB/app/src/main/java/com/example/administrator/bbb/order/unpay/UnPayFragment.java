@@ -5,6 +5,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.administrator.bbb.R;
 import com.example.administrator.bbb.base.BaseFragment;
+import com.example.administrator.bbb.tools.URLValues;
+import com.example.administrator.bbb.tools.okh.NetTool;
+import com.example.administrator.bbb.tools.okh.OnHttpCallBack;
 
 import java.util.ArrayList;
 
@@ -13,7 +16,6 @@ import java.util.ArrayList;
  */
 public class UnPayFragment extends BaseFragment {
     private UnpayAdapter mAdapter;
-    private ArrayList<UnpayBean> mUnpayBeen;
     private RecyclerView mRecyclerView;
 
     @Override
@@ -30,15 +32,19 @@ public class UnPayFragment extends BaseFragment {
     @Override
     protected void initData() {
         mAdapter = new UnpayAdapter(getActivity());
-        mUnpayBeen = new ArrayList<>();
-        UnpayBean bean = new UnpayBean();
-        for (int i = 0; i < 10; i++) {
-            bean.setTitle("lallala");
-            mUnpayBeen.add(bean);
-        }
+        NetTool.getInstance().startRequest(URLValues.URL_UNPAY, UnpayBean.class, new OnHttpCallBack<UnpayBean>() {
+            @Override
+            public void onSuccess(UnpayBean response) {
+                mAdapter.setUnpayBean(response);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+                mRecyclerView.setAdapter(mAdapter);
+            }
 
-        mAdapter.setBeanArrayList(mUnpayBeen);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(mAdapter);
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
+
     }
 }

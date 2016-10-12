@@ -6,6 +6,9 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.administrator.bbb.R;
 import com.example.administrator.bbb.base.BaseFragment;
+import com.example.administrator.bbb.tools.URLValues;
+import com.example.administrator.bbb.tools.okh.NetTool;
+import com.example.administrator.bbb.tools.okh.OnHttpCallBack;
 
 import java.util.ArrayList;
 
@@ -15,7 +18,6 @@ import java.util.ArrayList;
 public class EvaluationFragment extends BaseFragment {
     private RecyclerView mRecyclerView;
     private EvaluationAdapter mAdapter;
-    private ArrayList<EvaluationBean> mBeanArrayList;
 
     @Override
     protected int initLayout() {
@@ -31,16 +33,20 @@ public class EvaluationFragment extends BaseFragment {
     @Override
     protected void initData() {
         mAdapter = new EvaluationAdapter(getActivity());
-        mBeanArrayList = new ArrayList<>();
-
-        EvaluationBean bean = new EvaluationBean();
-        for (int i = 0; i < 10; i++) {
-            bean.setTitle("lallala");
-            mBeanArrayList.add(bean);
-        }
-
-        mAdapter.setBeanArrayList(mBeanArrayList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(mAdapter);
+
+        NetTool.getInstance().startRequest(URLValues.URL_RECEIPT_GOODS, EvaluationBean.class, new OnHttpCallBack<EvaluationBean>() {
+            @Override
+            public void onSuccess(EvaluationBean response) {
+                mAdapter.setEvaluationBean(response);
+                mRecyclerView.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
+
     }
 }

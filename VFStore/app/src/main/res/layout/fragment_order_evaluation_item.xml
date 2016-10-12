@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#e1e1e1"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="10dp"
+        android:id="@+id/iv_order_evaluation_item_icon"/>
+
+    <TextView
+        android:id="@+id/tv_order_evaluation_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="title"
+        android:layout_toRightOf="@id/iv_order_evaluation_item_icon"
+        android:textColor="@android:color/black"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/baixuan3x"
+        android:layout_toRightOf="@id/tv_order_evaluation_item_title"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_order_evaluation_item_unpay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="10dp"
+        android:text="交易成功"
+        android:textColor="@color/yellowTheme"/>
+
+    <RelativeLayout
+        android:id="@+id/reLayout_order_evaluation_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_order_evaluation_item_title"
+        android:background="#e1e1e1">
+
+        <ImageView
+            android:id="@+id/iv_order_evaluation_item_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_order_evaluation_item_goodsname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/iv_order_evaluation_item_head"
+            android:text="name"
+            android:textColor="@android:color/black"/>
+
+        <RelativeLayout
+            android:id="@+id/llayout_order_evaluation_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_order_evaluation_item_price_current"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="price"/>
+
+            <TextView
+                android:id="@+id/tv_order_evaluation_item_price_old"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/tv_order_evaluation_item_price_current"
+                android:layout_below="@id/tv_order_evaluation_item_price_current"
+                android:text="old"/>
+
+            <TextView
+                android:id="@+id/tv_order_evaluation_item_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/tv_order_evaluation_item_price_current"
+                android:layout_below="@id/tv_order_evaluation_item_price_old"
+                android:text="1"
+                android:textColor="@android:color/black"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reLayout_order_evaluation_item_totle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/reLayout_order_evaluation_item"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_order_evaluation_item_count_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="共1件商品，合计："
+            android:textColor="@android:color/black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_order_evaluation_item_price_totle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_order_evaluation_item_count_all"
+            android:text="3.4"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_order_evaluation_item_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_order_evaluation_item_price_totle"
+            android:text="(含运费:"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_order_evalution_item_price_extra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_order_evaluation_item_price_tv"
+            android:text="0.00)"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_order_evaluation_item_delete_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/reLayout_order_evaluation_item_totle"
+        android:layout_marginRight="10dp"
+        android:text="评价"/>
+
+    <Button
+        android:id="@+id/btn_order_evaluation_item_evaluation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reLayout_order_evaluation_item_totle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/btn_order_evaluation_item_delete_order"
+        android:text="删除订单"/>
+</RelativeLayout>

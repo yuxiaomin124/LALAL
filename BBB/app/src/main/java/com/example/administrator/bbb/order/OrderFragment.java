@@ -51,7 +51,7 @@ public class OrderFragment extends BaseFragment {
         mViewPager.setAdapter(mAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
 
-        mTabLayout.setTabTextColors(Color.BLACK,Color.RED);
-        mTabLayout.setSelectedTabIndicatorColor(Color.RED);
+        mTabLayout.setTabTextColors(Color.BLACK,0xfaf4810d);
+        mTabLayout.setSelectedTabIndicatorColor(0xfaf4810d);
     }
 }

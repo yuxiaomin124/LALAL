@@ -43,7 +43,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/shape_register">
+        android:background="@drawable/shape_register_gray_ba">
 
         <TextView
             android:id="@+id/tv_declare_register_num"
@@ -81,7 +81,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="15dp"
             android:layout_weight="2"
-            android:background="@drawable/shape_register"
+            android:background="@drawable/shape_register_gray_ba"
             android:orientation="horizontal"
             android:weightSum="3">
 
@@ -133,7 +133,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/shape_register"
+        android:background="@drawable/shape_register_gray_ba"
         android:orientation="horizontal"
         android:weightSum="4">
 
